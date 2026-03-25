@@ -129,8 +129,8 @@ h6 {
 /* Estilos de bordes y fondos difuminados (glassmorphism) para tarjetas y contenedores */
 .glass {
   background: var(--glass-bg) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  /* backdrop-filter: blur(12px); - Removed for sharper rendering */
+  /* -webkit-backdrop-filter: blur(12px); */
   border: 1px solid var(--glass-border) !important;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
@@ -141,8 +141,8 @@ h6 {
 
 .glass-card {
   background: var(--bg-card) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  /* backdrop-filter: blur(16px); - Removed for sharper rendering */
+  /* -webkit-backdrop-filter: blur(16px); */
   border: 1px solid var(--border-color) !important;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -174,16 +174,16 @@ h6 {
 }
 
 .glass-vibrant {
-  background: rgba(255, 255, 255, 0.6) !important;
-  backdrop-filter: blur(24px) saturate(200%);
-  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  background: rgba(255, 255, 255, 0.95) !important;
+  /* backdrop-filter: blur(24px) saturate(200%); - Removed for sharper rendering */
+  /* -webkit-backdrop-filter: blur(24px) saturate(200%); */
   border: 1px solid rgba(16, 185, 129, 0.15) !important;
   box-shadow: var(--shadow-elite);
 }
 
 .dark .glass-vibrant {
-  background: rgba(15, 23, 42, 0.5) !important;
-  border: 1px solid rgba(16, 185, 129, 0.15) !important;
+  background: #0f172a !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
 }
 
 /* ─── Typography & Buttons ─── */
