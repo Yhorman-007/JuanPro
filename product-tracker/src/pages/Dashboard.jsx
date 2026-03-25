@@ -15,12 +15,22 @@ const StatCard = ({ icon: Icon, label, value, accentClass, glowClass, delay }) =
             transition={{ duration: 0.5, delay }}
             className="w-full glass-vibrant p-8 rounded-3xl relative overflow-hidden group shadow-2xl min-w-0"
         >
-            <div className="relative z-10 flex flex-col w-full h-full justify-between">
-                <div className="mt-2 w-full">
-                    <p className="font-black text-slate-900 dark:text-slate-100 leading-tight text-4xl tracking-tight mb-2">
+            {/* Decorative background icon - 0.1 opacity as requested */}
+            <div className={`absolute -bottom-6 -right-6 p-4 opacity-10 group-hover:opacity-20 transition-opacity rounded-2xl ${accentClass} z-0 pointer-events-none transform rotate-12 scale-150`}>
+                <Icon className="w-32 h-32" />
+            </div>
+            
+            <div className="relative z-10 flex flex-col w-full h-full justify-between pointer-events-none">
+                <div className="flex items-start gap-4 flex-wrap">
+                    <div className={`p-5 rounded-2xl ${accentClass} bg-opacity-20 shadow-xl ${glowClass} border border-white/20`}>
+                        <Icon className="w-8 h-8 text-white" />
+                    </div>
+                </div>
+                <div className="mt-12 w-full">
+                    <p className="font-black text-slate-900 dark:text-slate-100 leading-tight text-3xl tracking-[-0.05em] mb-1 whitespace-nowrap">
                         {value}
                     </p>
-                    <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">
                         {label}
                     </p>
                 </div>

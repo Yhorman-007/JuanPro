@@ -228,29 +228,54 @@ const Reports = () => {
             </div>
 
             {/* Summary Cards */}
+            {/* Summary Cards */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-white/10 shadow-lg relative overflow-hidden group">
-                    <div className="relative z-10">
-                        <p className="text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Valor Inventario (Costo)</p>
-                        <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">{formatCOP(totalInventoryValue)}</p>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="glass p-8 rounded-3xl relative overflow-hidden group shadow-xl">
+                    <div className="absolute -right-8 -top-8 p-4 opacity-10 group-hover:opacity-20 transition-opacity z-0 pointer-events-none transform rotate-12 scale-125">
+                        <DollarSign className="w-32 h-32 text-blue-600" />
+                    </div>
+                    <div className="relative z-10 flex flex-col gap-6 pointer-events-none">
+                        <div className="p-3 bg-blue-100 dark:bg-blue-900/30 w-fit rounded-2xl shadow-inner z-10"><DollarSign className="w-8 h-8 text-blue-600" /></div>
+                        <div className="z-20">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-2">Valor Inventario (Costo)</p>
+                            <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tight drop-shadow-sm">{formatCOP(totalInventoryValue)}</p>
+                        </div>
                     </div>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-white/10 shadow-lg relative overflow-hidden group">
-                    <div className="relative z-10">
-                        <p className="text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Ventas Totales</p>
-                        <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">{formatCOP(totalSales)}</p>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass p-8 rounded-3xl relative overflow-hidden group shadow-xl">
+                    <div className="absolute -right-8 -top-8 p-4 opacity-10 group-hover:opacity-20 transition-opacity z-0 pointer-events-none transform rotate-12 scale-125">
+                        <TrendingUp className="w-32 h-32 text-green-600" />
+                    </div>
+                    <div className="relative z-10 flex flex-col gap-6 pointer-events-none">
+                        <div className="p-3 bg-green-100 dark:bg-emerald-900/30 w-fit rounded-2xl shadow-inner z-10"><TrendingUp className="w-8 h-8 text-green-600" /></div>
+                        <div className="z-20">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-2">Ventas Totales</p>
+                            <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tight drop-shadow-sm">{formatCOP(totalSales)}</p>
+                        </div>
                     </div>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-white/10 shadow-lg relative overflow-hidden group">
-                    <div className="relative z-10">
-                        <p className="text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Utilidad Neta (Real)</p>
-                        <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">{formatCOP(stats.netProfit || 0)}</p>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="glass p-8 rounded-3xl relative overflow-hidden group shadow-xl">
+                    <div className="absolute -right-8 -top-8 p-4 opacity-10 group-hover:opacity-20 transition-opacity z-0 pointer-events-none transform rotate-12 scale-125">
+                        <Calculator className="w-32 h-32 text-indigo-600" />
+                    </div>
+                    <div className="relative z-10 flex flex-col gap-6 pointer-events-none">
+                        <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 w-fit rounded-2xl shadow-inner z-10"><Calculator className="w-8 h-8 text-indigo-600" /></div>
+                        <div className="z-20">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-2">Utilidad Neta (Real)</p>
+                            <p className="text-3xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight drop-shadow-sm">{formatCOP(stats.netProfit || 0)}</p>
+                        </div>
                     </div>
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-white/10 shadow-lg relative overflow-hidden group">
-                    <div className="relative z-10">
-                        <p className="text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-2">Utilidad Potencial</p>
-                        <p className="text-3xl font-black text-orange-600 dark:text-orange-400 tracking-tight">{formatCOP(totalPotentialProfit)}</p>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass p-8 rounded-3xl relative overflow-hidden group shadow-xl">
+                    <div className="absolute -right-8 -top-8 p-4 opacity-10 group-hover:opacity-20 transition-opacity z-0 pointer-events-none transform rotate-12 scale-125">
+                        <TrendingUp className="w-32 h-32 text-orange-600" />
+                    </div>
+                    <div className="relative z-10 flex flex-col gap-6 pointer-events-none">
+                        <div className="p-3 bg-orange-100 dark:bg-orange-900/30 w-fit rounded-2xl shadow-inner z-10"><TrendingUp className="w-8 h-8 text-orange-600" /></div>
+                        <div className="z-20">
+                            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 mb-2">Utilidad Potencial</p>
+                            <p className="text-3xl font-black text-orange-600 dark:text-orange-400 tracking-tight drop-shadow-sm">{formatCOP(totalPotentialProfit)}</p>
+                        </div>
                     </div>
                 </motion.div>
             </div>

@@ -14,9 +14,11 @@ const MainLayout = () => {
                 style={{ marginLeft: isExpanded ? '16rem' : '5rem' }}
             >
                 <Header />
-                <main className="flex-1 p-6 mt-16 overflow-y-auto">
+            <main className="flex-1 p-8 lg:p-10 mt-16 overflow-y-auto">
+                <div className="max-w-[1600px] mx-auto space-y-8">
                     <Outlet />
-                </main>
+                </div>
+            </main>
             </div>
         </div>
     );

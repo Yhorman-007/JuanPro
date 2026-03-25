@@ -66,9 +66,10 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
                     <span
                         className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-green-500 whitespace-nowrap overflow-visible"
                         style={{
-                            maxWidth: isExpanded ? '250px' : '0px',
+                            maxWidth: isExpanded ? '300px' : '0px',
                             opacity: isExpanded ? 1 : 0,
-                            transition: 'max-width 0.4s ease, opacity 0.3s ease',
+                            paddingLeft: isExpanded ? '0.5rem' : '0px',
+                            transition: 'max-width 0.4s ease, opacity 0.3s ease, padding 0.3s ease',
                         }}
                     >
                         {appName}
