@@ -44,10 +44,43 @@ Aplicación web profesional diseñada para que pequeños y medianos negocios pue
 
 ## 🚀 Despliegue en Producción
 
-El sistema se encuentra desplegado y operativo en las siguientes plataformas:
+El sistema se encuentra desplegado y operativo bajo la siguiente infraestructura:
 
-- **API Backend:** [Product Tracker API](https://product-tracker-production.up.railway.app/) (Railway)
-- **Base de Datos:** [Neon.tech](https://neon.tech/) (PostgreSQL en US-East-1)
+### 1. Backend (API)
+- **Plataforma:** [Railway](https://railway.app/)
+- **URL de Producción:** `https://product-tracker-production.up.railway.app`
+- **Entorno de Ejecución:** Python 3.11.9
+- **Entry Point:** `python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+
+### 2. Base de Datos
+- **Plataforma:** [Neon](https://neon.tech/)
+- **Tipo:** PostgreSQL 16+ (Serverless)
+- **Región:** AWS US-East-1
+- **Características:** Conexión segura SSL habilitada.
+
+### 3. Frontend (Web App)
+- **Plataforma:** Railway (Contenedor con servidor estático)
+- **CORS:** Configurado para permitir peticiones desde el dominio de producción de Railway.
+
+---
+
+## 🔑 Variables de Entorno (Producción)
+
+| Variable | Descripción | Fuente / Notas |
+|---|---|---|
+| `DATABASE_URL` | Cadena de conexión a Neon | Secreto en Railway |
+| `SECRET_KEY` | Clave para firma de tokens JWT | Secreto en Railway |
+| `ALGORITHM` | Algoritmo de hashing (HS256) | Configurado en el código |
+| `SMTP_USER` | Email para notificaciones | Gmail |
+| `SMTP_PASSWORD` | Contraseña de aplicación Gmail | Gmail App Password |
+
+---
+
+## 🔄 Procedimiento de Actualización
+
+1. **Despliegue Continuo:** Cualquier cambio subido a la rama `main` en GitHub se despliega automáticamente en Railway.
+2. **Base de Datos:** Las tablas se sincronizan automáticamente al iniciar la aplicación mediante SQLAlchemy (`Base.metadata.create_all`).
+3. **Frontend:** El build se genera automáticamente durante el proceso de despliegue en la plataforma.
 
 ---
 
